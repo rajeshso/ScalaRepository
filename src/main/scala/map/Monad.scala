@@ -10,7 +10,7 @@ class Monad {
 class Person(val name: String, val worth : Int)
 
 class PersonSet extends Iterable[Person] {
-  val persons = Set(new Person("John", 900), new Person("Cara", 100), new Person("Mike", 500))
+  val persons = Set(new Person("John", 900), new Person("Cara", 100), new Person("Mike", 500), new Person("Ramesh",200), new Person("Suresh",600))
 
   def find(name :String) : Option[Person] = {
     for(person <- persons) {
@@ -27,5 +27,9 @@ object Monad {
     val totalWorthValue : Option[Int] = personSet.find("John").map(person => person.worth)
     val x: Int = totalWorthValue.getOrElse(0)
     println(x)
+    val indianCustomers = Set("Ramesh","Suresh")
+    val totalWorthOfIndianCustomers = indianCustomers.map(personSet.find(_).map(_.worth)).flatten.sum
+    //todo: replace .map and .flatten with .flatMap
+    println("totalWorthOfIndianCustomers = "+totalWorthOfIndianCustomers)
   }
 }
