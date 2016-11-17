@@ -5,6 +5,7 @@ import java.util.Calendar
   */
 class SimpleFlatMapExample {
   //We shall use this as a flatmap function
+  //One Input results In Multiple Output - OneToMany
   def ages(birthYear : Int) :List[Int] = {
     val today : Int = Calendar.getInstance().get(Calendar.YEAR)
     List(today-1-birthYear, today - birthYear, today+1 - birthYear)
@@ -19,6 +20,6 @@ object SimpleFlatMapExample {
     println(ageYears)
     val today : Int = Calendar.getInstance().get(Calendar.YEAR)
     println(birthyears.flatMap(birthYear => List(today-1-birthYear, today-birthYear, today+1-birthYear)))
-    println(birthyears.map(birthYear => List(today-1-birthYear, today-birthYear, today+1-birthYear))) //Note the difference in output for flatMap and Map
+    println(birthyears.map(birthYear => List(today-1-birthYear, today-birthYear, today+1-birthYear))) //Note the difference in Input and Output for flatMap and Map
   }
 }

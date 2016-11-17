@@ -28,8 +28,10 @@ object Monad {
     val x: Int = totalWorthValue.getOrElse(0)
     println(x)
     val indianCustomers = Set("Ramesh","Suresh")
-    val totalWorthOfIndianCustomers = indianCustomers.map(personSet.find(_).map(_.worth)).flatten.sum
-    //todo: replace .map and .flatten with .flatMap
-    println("totalWorthOfIndianCustomers = "+totalWorthOfIndianCustomers)
+    val totalWorthOfIndianCustomers1 = indianCustomers.map(personSet.find(_).map(_.worth)).flatten.sum
+    //todo: the solution with replaced .map and .flatten with .flatMap
+    val totalWorthOfIndianCustomers2 = indianCustomers.flatMap(name=> personSet.find(name)).map(_.worth).sum
+    println("totalWorthOfIndianCustomers1 = "+totalWorthOfIndianCustomers1)
+    println("totalWorthOfIndianCustomers2 = "+totalWorthOfIndianCustomers2)
   }
 }
