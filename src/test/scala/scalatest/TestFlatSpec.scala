@@ -24,9 +24,9 @@ class TestFlatSpec extends FlatSpec with MustMatchers  {
   }
 
   it should "produce NoSuchElementException when head is invoked" in {
-    assertThrows[NoSuchElementException] {
-      Set.empty.head
-    }
+    /*    assertThrows[NoSuchElementException] {
+          Set.empty.head
+        }*/
   }
 
   it should "dsfsdf" in {

@@ -56,10 +56,6 @@ var message = "I am moving up"
 
 import java.util.Calendar
 
-import org.scalactic.StringNormalizations._
-import org.scalatest.Matchers._
-"Hi" should equal ("hi") (after being lowerCased)
-
 def age(birthYear : Int) : Int = {
   import java.util.Calendar
   Calendar.getInstance().get(Calendar.YEAR) - birthYear
@@ -88,4 +84,12 @@ println(seqDoubleInt)
 
 val aArray = Array(1,2,3,4,5)
 val aArrayDoubled : Array[Int] = for(e <- aArray) yield e*2
+
+
+
+
+
+List('a', 'b', 'c', 'd').view.zipWithIndex.foreach(print(_))
+
+List('a', 'b', 'c', 'd').view.zipWithIndex foreach { case (value, index) => println(value, index) }
 
