@@ -23,6 +23,7 @@ class TestFlatSpec extends FlatSpec with MustMatchers  {
     assert(Set.empty.size == 0)
   }
 
+  //it means "kjhlkh"
   it should "produce NoSuchElementException when head is invoked" in {
     /*    assertThrows[NoSuchElementException] {
           Set.empty.head
@@ -34,4 +35,9 @@ class TestFlatSpec extends FlatSpec with MustMatchers  {
     list.size should be (2)
   }
 
+  //Use of assertResult (expected) (actual)
+  it should "dsfsddsff" in {
+    val two = 2
+    assertResult(two)(1 + 1)
+  }
 }
