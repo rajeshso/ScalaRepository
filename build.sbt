@@ -12,6 +12,9 @@ scalaVersion := "2.11.7"
 //libraryDependencies += "org.scalatest" % "scalatest_2.10" % "2.2.6" % "test"
 //if you omit test, the scalatest can be used outside the src/test
 
-libraryDependencies += "org.scalactic" %% "scalactic" % "2.2.6"
+libraryDependencies += "org.scalactic" %% "scalactic" % "2.2.6" % "test"
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.2.2" % "test"
+
+resolvers += "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases"
+libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.4.14"
